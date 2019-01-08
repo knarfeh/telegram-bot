@@ -17,7 +17,7 @@ module.exports = {
         // },
     },
     themeConfig: {
-        repo: 'knarfeh/searchtelegram-bot',
+        repo: 'eebook/telegram-bot',
         editLinks: true,
         docsDir: 'docs',
         locales: {

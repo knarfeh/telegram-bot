@@ -1,6 +1,6 @@
 {
   "apps": [{
-    "name": "searchtelegram-bot",
+    "name": "eebook-tg-bot",
     "script": "/app/dist/index.js",
     "instances": 1,
     "args": ["slave"],

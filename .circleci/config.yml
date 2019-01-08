@@ -4,7 +4,7 @@ jobs:
     branches:
       ignore:
         - gh-pages
-    working_directory: ~/searchtelegram-bot
+    working_directory: ~/telegram-bot
     docker:
       - image: circleci/node:8.11-stretch
     steps:

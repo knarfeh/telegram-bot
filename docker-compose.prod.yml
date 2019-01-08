@@ -1,7 +1,7 @@
 version: '2'
 services:
   api:
-    image: $ST_BOT_IMAGE
+    image: $EEBOOK_TELEGRAM_BOT_IMAGE
     build:
       context: .
       dockerfile: ./Dockerfile

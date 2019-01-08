@@ -1,7 +1,7 @@
 {
-  "name": "searchtelegram-bot",
+  "name": "eebook-tg-bot",
   "version": "0.0.2",
-  "description": "Telegram bot that searches telegram bot, channel, public group",
+  "description": "Telegram bot that serve eebook",
   "main": "node dist/src/index.js",
   "dependencies": {
     "body-parser": "^1.15.2",
@@ -61,6 +61,6 @@
   "author": "knarfeh",
   "license": "AGPLv3",
   "bugs": {
-    "url": "https://github.com/knarfeh/searchtelegram-bot/issues"
+    "url": "https://github.com/knarfeh/eebook-bot/issues"
   }
 }
