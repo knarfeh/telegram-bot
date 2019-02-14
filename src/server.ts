@@ -1,5 +1,4 @@
 import * as express from 'express'; /* ts-diable */
-import * as elasticsearch from 'elasticsearch';
 import * as redis from 'redis';
 import { url } from './config/config';
 const redsearch = require('redredisearch'); /* ts-diable */
@@ -10,7 +9,6 @@ export default class Server {
   public express: any;
   public bot: any;
   public redisClient: redis.RedisClient;
-  public esClient: elasticsearch.Client;
   public redSearch: any;
   constructor(bot: any) {
     const server: express.Application = express();
@@ -20,11 +18,15 @@ export default class Server {
     // });
     // redsearch.setClient(redisClient);
 
-    console.log(`Settings webhook: ${url}${WEBHOOK_PATH}`)
-    // bot.telegram.setWebhook(`${url}${WEBHOOK_PATH}`);
-    // bot.startWebhook(`/${WEBHOOK_PATH}`, null, 80);
-    bot.telegram.deleteWebhook();
-    bot.startPolling();
+    if (WEBHOOK_PATH !== undefined) {
+      console.log(`Settings webhook: ${url}${WEBHOOK_PATH}`)
+      console.log('WEBHOOK_PATH is not none')
+      bot.telegram.setWebhook(`${url}${WEBHOOK_PATH}`);
+      bot.startWebhook(`/${WEBHOOK_PATH}`, null, 80);
+    } else {
+      console.log('Start polling...')
+      bot.startPolling();
+    }
     this.express = server;
     this.bot = bot;
   }
